@@ -1,5 +1,5 @@
 {
-    "name": "katanyoo/yii2-mailgun-mailer",
+    "name": "xutl/yii2-mailgun-mailer",
     "description": "Mailgun Mailer for Yii 2 framework.",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","mailer","mailgun"],
@@ -8,22 +8,25 @@
         {
             "name": "Katanyoo Ubalee",
             "email": "ubalee.k@gmail.com"
+        },
+        {
+            "name": "XUTL",
+            "email": "xutl@gmail.com"
         }
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "mailgun/mailgun-php": "1.7.1"
+        "mailgun/mailgun-php": "~2.0"
     },
     "autoload": {
         "psr-4": {
-            "katanyoo\\mailgunmailer\\": "",
-            "Mailgun\\": ""
+            "xutl\\mailgunmailer\\": ""
         }
     },
     "repositories":[
         {
             "type": "git",
-            "url": "https://github.com/katanyoo/yii2-mailgun-mailer"
+            "url": "https://github.com/xutl/yii2-mailgun-mailer"
         }
     ]
 }

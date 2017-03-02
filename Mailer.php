@@ -1,12 +1,13 @@
 <?php
 
-namespace katanyoo\mailgunmailer;
+namespace xutl\mailgunmailer;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\mail\BaseMailer;
 
 use Mailgun\Mailgun;
+
 /**
  * Mailer implements a mailer based on Mailgun.
  *
@@ -33,7 +34,7 @@ class Mailer extends BaseMailer
 	 * [$messageClass description]
 	 * @var string message default class name.
 	 */
-	public $messageClass = 'katanyoo\mailgunmailer\Message';
+	public $messageClass = 'xutl\mailgunmailer\Message';
 
 	public $domain;
 	public $key;
