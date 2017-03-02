@@ -10,16 +10,17 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist katanyoo/yii2-mailgun-mailer "*"
+php composer.phar require --prefer-dist xutl/yii2-mailgun-mailer "*"
 ```
 
 or add
 
 ```
-"katanyoo/yii2-mailgun-mailer": "*"
+"xutl/yii2-mailgun-mailer": "*"
 ```
 
 to the require section of your `composer.json` file.
+
 
 
 Usage
@@ -37,3 +38,9 @@ Yii::$app->mailer->compose('<view_name>', <option>)
 // ->setTextBody("Hello User")
 ->send();
 ?>```
+
+
+Thx
+-----
+https://github.com/mailgun/mailgun-php
+https://github.com/katanyoo/yii2-mailgun-mailer

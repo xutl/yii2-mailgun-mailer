@@ -5,8 +5,6 @@ namespace xutl\mailgunmailer;
 use yii\mail\BaseMessage;
 use Mailgun\Messages\MessageBuilder;
 
-require_once __DIR__.'/../../mailgun/mailgun-php/src/Mailgun/Constants/Constants.php';
-
 /**
  * Message implements a message class based on Mailgun.
  *
@@ -15,6 +13,7 @@ require_once __DIR__.'/../../mailgun/mailgun-php/src/Mailgun/Constants/Constants
  *
  *
  * @author Katanyoo Ubalee <ublee.k@gmail.com>
+ * @author XU TL <xutl@gmail.com>
  */
 class Message extends BaseMessage
 {
@@ -30,12 +29,12 @@ class Message extends BaseMessage
 	protected $to;*/
 
 	/**
-	 * @var \Mailgun\Messages\MessageBuilder Mailgun message instance.
+	 * @var MessageBuilder Mailgun message instance.
 	 */
 	private $_messageBuilder;
 
 	/**
-	 * @return \Swift_Message Swift message instance.
+	 * @return MessageBuilder Mailgun message instance.
 	 */
 	public function getMessageBuilder()
 	{
@@ -242,27 +241,28 @@ class Message extends BaseMessage
 		return $this;
 	}
 
-	/**
-	 * Set click tracking
-	 * @param Boolean|String $enabled true, false, "html"
-	 */
+    /**
+     * Set click tracking
+     * @param bool $enabled
+     * @return $this
+     */
 	public function setClickTracking($enabled)
 	{
 		$this->getMessageBuilder()->setClickTracking($enabled);
 		return $this;
 	}
 
-	/**
-	 * @return Array message object
-	 */
+    /**
+     * @return array message object
+     */
 	public function getMessage()
 	{
 		return $this->getMessageBuilder()->getMessage();
 	}
 
-	/**
-	 * @return Array files list
-	 */
+    /**
+     * @return array files list
+     */
 	public function getFiles()
 	{
 		return $this->getMessageBuilder()->getFiles();
@@ -270,7 +270,7 @@ class Message extends BaseMessage
 
 	/**
 	 * Creates the Mailgun email message instance.
-	 * @return \MessageBldr email message instance.
+	 * @return MessageBuilder email message instance.
 	 */
 	protected function createMessageBuilder()
 	{

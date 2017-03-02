@@ -5,7 +5,6 @@ namespace xutl\mailgunmailer;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\mail\BaseMailer;
-
 use Mailgun\Mailgun;
 
 /**
@@ -44,9 +43,18 @@ class Mailer extends BaseMailer
 	public $tags = [];
 	public $campaignId;
 	public $enableDkim;
+
 	public $enableTestMode;
+
 	public $enableTracking;
+    /**
+     * @var bool 是否开启点击跟踪
+     */
 	public $clicksTrackingMode; // true, false, "html"
+
+    /**
+     * @var bool 是否开启打开跟踪
+     */
 	public $enableOpensTracking;
 
 	private $_mailgunMailer;
@@ -63,14 +71,12 @@ class Mailer extends BaseMailer
 		return $this->_mailgunMailer;
 	}
 
-	/**
-	 * @inheritdoc
-	 */
+    /**
+     * @param Message $message
+     * @return bool
+     */
 	protected function sendMessage($message)
 	{
-		$mailer = $this->getMailgunMailer();
-
-
 		$message->setClickTracking($this->clicksTrackingMode)
 		->addTags($this->tags);
 
@@ -92,7 +98,6 @@ class Mailer extends BaseMailer
 	 */
 	protected function createMailgunMailer()
 	{
-		$mg = new Mailgun($this->key);
-		return $mg;
+		return new Mailgun($this->key);
 	}
 }
