@@ -30,6 +30,17 @@ Once the extension is installed, simply use it in your code by  :
 
 ```php
 <?php
+  'components' => [
+      'mailer' => [
+          'class' => 'xutl\mailgunmailer\Mailer',
+          'domain' => 'example.com',
+          'key' => 'key-somekey',
+          'tags' => ['yii'],
+          'enableTracking' => false,
+      ],
+  ],
+?>
+<?php
 Yii::$app->mailer->compose('<view_name>', <option>)
 ->setFrom("<from email>")
 ->setTo("<to email>")
