@@ -1,9 +1,8 @@
-Yii2 Mailgun Mailer
-===================
+# Yii2 Mailgun Mailer
+
 Mailgun mailer for Yii 2 framework.
 
-Installation
-------------
+## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -23,8 +22,7 @@ to the require section of your `composer.json` file.
 
 
 
-Usage
------
+## Usage
 
 Once the extension is installed, simply use it in your code by  :
 
@@ -51,7 +49,7 @@ Yii::$app->mailer->compose('<view_name>', <option>)
 ?>```
 
 
-Thx
------
+## Thx
+
 https://github.com/mailgun/mailgun-php
 https://github.com/katanyoo/yii2-mailgun-mailer
