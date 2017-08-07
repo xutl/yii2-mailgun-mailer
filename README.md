@@ -46,7 +46,8 @@ Yii::$app->mailer->compose('<view_name>', <option>)
 // ->setHtmlBody("<b> Hello User </b>")
 // ->setTextBody("Hello User")
 ->send();
-?>```
+?>
+```
 
 
 ## Thx
